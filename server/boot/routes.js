@@ -6,7 +6,6 @@ module.exports = function(app) {
     var router = app.loopback.Router();
 
     function renderReact(Component, props) {
-        console.log(props);
         Component = React.createFactory(Component);
         return React.renderToString(Component(props));
     }
