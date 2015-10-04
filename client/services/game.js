@@ -45,7 +45,14 @@ module.exports = {
 
     update: function(params) {
         return put('/api/games/' + params.id, params).then(function(res) {
-            context.games.push(res);
+            var game = _.find(context.games, {
+                id: res.id
+            });
+
+            if (game) {
+                _.extend(game, res);
+            }
+
             return res;
         });
     },
