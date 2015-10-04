@@ -43,6 +43,7 @@ module.exports = function(app) {
                         return res.send(new Error(error));
                     }
                     res.locals.content = renderReact(route.component, params);
+                    res.locals.serverData = params;
                     res.render('main.html');
                 });
             } else {

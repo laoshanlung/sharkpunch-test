@@ -16,7 +16,11 @@
         <div id="react-app">
             {{ content|safe }}
         </div>
-
+        {% if serverData %}
+        <script>
+        window._serverData = {{ serverData|json|safe }}
+        </script>
+        {% endif %}
         <script src="/main.js"></script>
     </body>
 </html>
