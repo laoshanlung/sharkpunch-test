@@ -1,0 +1,39 @@
+{
+  "name": "sharkpunch-test",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "scripts": {
+    "pretest": "jshint ."
+  },
+  "dependencies": {
+    "compression": "^1.0.3",
+    "cors": "^2.5.2",
+    "lodash": "^3.10.1",
+    "loopback": "^2.22.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^2.1.0",
+    "loopback-datasource-juggler": "^2.39.0",
+    "node-jsx": "^0.13.3",
+    "react": "^0.13.3",
+    "react-router": "^1.0.0-rc1",
+    "serve-favicon": "^2.0.1",
+    "swig": "^1.4.2"
+  },
+  "devDependencies": {
+    "browserify": "^11.2.0",
+    "gulp-eslint": "^1.0.0",
+    "gulp-nodemon": "^2.0.4",
+    "gulp-util": "^3.0.6",
+    "gulp-watch": "^4.3.5",
+    "jshint": "^2.5.6",
+    "react-tools": "^0.13.3",
+    "reactify": "^1.1.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "description": "sharkpunch-test"
+}
