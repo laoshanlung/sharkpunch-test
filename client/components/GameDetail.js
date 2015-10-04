@@ -3,7 +3,8 @@ var React = require('react/addons')
     , GameSummary = require('./GameSummary')
     , _ = require('lodash')
     , Link = require('react-router').Link
-    , gameService = require('../services/game');
+    , gameService = require('../services/game')
+    , serverData = require('../services/serverData');
 
 var GameDetail = React.createClass({
     getInitialState: function() {
@@ -22,6 +23,14 @@ var GameDetail = React.createClass({
 
     componentDidMount: function() {
         if (this.props.game) {
+            return;
+        }
+
+        var game = serverData.get('game');
+        if (game) {
+            this.setState({
+                game: game
+            });
             return;
         }
 
