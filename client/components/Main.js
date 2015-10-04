@@ -3,7 +3,8 @@ var React = require('react')
     , gameService = require('../services/game')
     , GameSummary = require('./GameSummary')
     , Link = require('react-router').Link
-    , allPlatforms = require('../../common/platforms');
+    , allPlatforms = require('../../common/platforms')
+    , serverData = require('../services/serverData');
 
 var Main = React.createClass({
     mixins: [React.addons.LinkedStateMixin],
@@ -24,6 +25,18 @@ var Main = React.createClass({
 
     componentDidMount: function() {
         if (this.props.games) {
+            return;
+        }
+
+        var games = serverData.get('games');
+        if (games) {
+            gameService.context.games = games;
+        }
+
+        if (gameService.context.games.length) {
+            this.setState({
+                games: gameService.context.games
+            });
             return;
         }
 
